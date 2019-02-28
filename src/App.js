@@ -2,24 +2,27 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class MyButton extends Component {
+  render(){
+    return <button>{this.props.label}</button>
+  }
+}
+
+class MyLabel extends Component {
+  render(){
+    return <p>Antes da Props {this.props.text}</p>
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <MyLabel text="Escrevendo pelo App"/>
+        <MyButton label="Botão 1"/>
+        <MyButton label="Botão 2"/>
+        <MyButton label="Botão 3"/>
+        <MyButton label="Botão 4"/>
       </div>
     );
   }
